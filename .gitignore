@@ -1,3 +1,18 @@
+# Dependency directories
+node_modules/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Build directories
+dist/
+dist-ssr/
+build/
+.out/
+.next/
+
 # Logs
 logs
 *.log
@@ -6,11 +21,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
-*.local
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +32,27 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Debug files
+*.local
+*.orig
+*.rej
+
+# Coverage directory
+coverage/
+
+# Production cache
+.cache/
+
+# Local development files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# TypeScript cache
+*.tsbuildinfo
