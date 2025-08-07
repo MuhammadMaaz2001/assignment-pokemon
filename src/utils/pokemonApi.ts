@@ -5,9 +5,10 @@ import { Pokemon } from '../types/pokemon';
 const POKEAPI_BASE_URL = (import.meta as any).env.VITE_POKEAPI_BASE_URL;
 
 export class PokemonApiError extends Error {
-  constructor(message: string,  status?: number) {
+  constructor(message: string) {
     super(message);
     this.name = 'PokemonApiError';
+
     
   }
 }
@@ -21,9 +22,9 @@ export const searchPokemon = async (nameOrId: string): Promise<Pokemon> => {
     
     if (!response.ok) {
       if (response.status === 404) {
-        throw new PokemonApiError(`Pokémon "${nameOrId}" not found`, 404);
+        throw new PokemonApiError(`Pokémon "${nameOrId}" not found`);
       }
-      throw new PokemonApiError(`Failed to fetch Pokémon: ${response.statusText}`, response.status);
+      throw new PokemonApiError(`Failed to fetch Pokémon: ${response.statusText}`);
     }
     
     const pokemon: Pokemon = await response.json();
