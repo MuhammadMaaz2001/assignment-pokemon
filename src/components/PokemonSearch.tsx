@@ -1,4 +1,3 @@
-// src/components/PokemonSearch.tsx
 
 import React, { useState } from 'react';
 
